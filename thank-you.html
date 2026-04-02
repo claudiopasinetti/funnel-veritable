@@ -330,12 +330,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  /* Wistia: show CTA after 16 min (960s) watched */
+  /* Wistia: show CTA when video reaches minute 16 */
   window._wq = window._wq || [];
   _wq.push({ id: 'nige103anw', onReady: function(video) {
     var shown = false;
-    video.bind('secondchange', function(s) {
-      if (!shown && s >= 960) {
+    video.bind('timechange', function(t) {
+      if (!shown && t >= 960) {
         shown = true;
         var cta = document.getElementById('cta-post-video');
         if (cta) {
