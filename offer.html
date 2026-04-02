@@ -275,8 +275,11 @@
       <p class="text-on-surface-variant text-lg">Scegli il giorno e l'orario che preferisci per la tua sessione con Ettore.</p>
     </div>
     <div class="bg-surface-container-lowest p-6 sm:p-12 shadow-2xl border border-outline-variant/20">
-      <!-- Google Calendar Appointment Scheduling embed — replace CALENDAR_URL with actual booking link -->
-      <iframe src="CALENDAR_URL" style="border: 0" width="100%" height="600" frameborder="0" loading="lazy" title="Prenota audit con Ettore Chiurazzi"></iframe>
+      <!-- Google Calendar Appointment Scheduling -->
+      <iframe id="gcal-iframe" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0GkGcHP06dvQ1xWPHodG8R2xP_ML7aN44OBHfy8lELXG_dvqvtF3XEjeBgM7-MCIhvXXX077a9?gv=true" style="border: 0; min-height: 600px;" width="100%" frameborder="0" loading="lazy" title="Prenota audit con Ettore Chiurazzi"></iframe>
+      <script>
+      (function(){var f=document.getElementById('gcal-iframe');function resize(){f.style.height=Math.max(600,window.innerHeight-200)+'px';}resize();window.addEventListener('resize',resize);})();
+      </script>
     </div>
   </div>
 </section>
