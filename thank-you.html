@@ -245,8 +245,8 @@
   </div>
 </section>
 
-<!-- 4. CTA POST-VIDEO -->
-<section class="py-24 bg-primary text-on-primary relative overflow-hidden">
+<!-- 4. CTA POST-VIDEO (hidden until 16 min watched) -->
+<section id="cta-post-video" class="py-24 bg-primary text-on-primary relative overflow-hidden transition-all duration-700" style="display:none; opacity:0;">
   <div class="max-w-screen-xl mx-auto px-6 text-center relative z-10">
     <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl mb-6">Vuoi applicare il framework alla tua azienda?</h2>
     <p class="text-xl text-primary-fixed max-w-2xl mx-auto mb-10">Prenota il tuo Brand Perception Audit™ gratuito — 60 minuti 1-on-1 con Ettore per analizzare il tuo Indice di Visibilita' specifico.</p>
@@ -329,6 +329,22 @@ document.addEventListener('DOMContentLoaded', function() {
       if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
+
+  /* Wistia: show CTA after 16 min (960s) watched */
+  window._wq = window._wq || [];
+  _wq.push({ id: 'nige103anw', onReady: function(video) {
+    var shown = false;
+    video.bind('secondchange', function(s) {
+      if (!shown && s >= 960) {
+        shown = true;
+        var cta = document.getElementById('cta-post-video');
+        if (cta) {
+          cta.style.display = '';
+          setTimeout(function() { cta.style.opacity = '1'; }, 50);
+        }
+      }
+    });
+  }});
 
 });
 </script>
