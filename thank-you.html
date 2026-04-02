@@ -240,6 +240,29 @@
     <script src="https://fast.wistia.com/embed/nige103anw.js" async type="module"></script>
     <style>wistia-player[media-id='nige103anw']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/nige103anw/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
     <wistia-player media-id="nige103anw" aspect="1.7777777777777777"></wistia-player>
+    <script>
+    (function() {
+      var shown = false;
+      var wp = document.querySelector('wistia-player[media-id="nige103anw"]');
+      function showCta() {
+        if (shown) return;
+        shown = true;
+        var cta = document.getElementById('cta-post-video');
+        if (cta) { cta.style.display = ''; setTimeout(function() { cta.style.opacity = '1'; }, 50); }
+      }
+      function listen(el) {
+        el.addEventListener('second-change', function(e) {
+          if (e.detail && e.detail.second >= 960) showCta();
+        });
+      }
+      if (wp) listen(wp);
+      /* fallback: also try the legacy _wq API */
+      window._wq = window._wq || [];
+      _wq.push({ id: 'nige103anw', onReady: function(video) {
+        video.bind('secondchange', function(s) { if (s >= 960) showCta(); });
+      }});
+    })();
+    </script>
 
     <p class="text-center text-on-surface-variant mt-8 text-sm">Al termine del workshop, scoprirai come approfondire con un audit personalizzato.</p>
   </div>
@@ -329,22 +352,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
-
-  /* Wistia: show CTA when video reaches minute 16 (960s) */
-  var shown = false;
-  var player = document.querySelector('wistia-player[media-id="nige103anw"]');
-  if (player) {
-    player.addEventListener('second-change', function(e) {
-      if (!shown && e.detail && e.detail.second >= 960) {
-        shown = true;
-        var cta = document.getElementById('cta-post-video');
-        if (cta) {
-          cta.style.display = '';
-          setTimeout(function() { cta.style.opacity = '1'; }, 50);
-        }
-      }
-    });
-  }
 
 });
 </script>
