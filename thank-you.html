@@ -330,13 +330,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  /* Wistia: show CTA when video reaches minute 16 */
+  /* Wistia: show CTA when video reaches minute 16 (960s) */
   var shown = false;
-  function initWistia() {
-    var player = document.querySelector('wistia-player[media-id="nige103anw"]');
-    if (!player) return;
-    player.addEventListener('time-change', function(e) {
-      if (!shown && e.detail && e.detail.time >= 960) {
+  var player = document.querySelector('wistia-player[media-id="nige103anw"]');
+  if (player) {
+    player.addEventListener('second-change', function(e) {
+      if (!shown && e.detail && e.detail.second >= 960) {
         shown = true;
         var cta = document.getElementById('cta-post-video');
         if (cta) {
@@ -345,12 +344,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     });
-  }
-  if (document.querySelector('wistia-player[media-id="nige103anw"]')) {
-    initWistia();
-  } else {
-    /* fallback: wait for custom element to be defined */
-    customElements.whenDefined('wistia-player').then(initWistia);
   }
 
 });
