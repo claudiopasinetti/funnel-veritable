@@ -140,6 +140,13 @@
         }
         @font-face {
             font-family: "Nacelle";
+            src: url("assets/fonts/nacelle/Nacelle-LightItalic.otf") format("opentype");
+            font-weight: 300;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Nacelle";
             src: url("assets/fonts/nacelle/Nacelle-Regular.otf") format("opentype");
             font-weight: 400;
             font-style: normal;
@@ -191,10 +198,10 @@
 <img alt="Véritable Logo" class="h-10 md:h-12 w-auto object-contain" src="assets/images/veritable-logo.png"/>
 </div>
 <div class="hidden md:flex space-x-8 items-center">
-<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Problemi</a>
-<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Metodo</a>
-<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Casi Studio</a>
-<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Chi Siamo</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#problemi">Problemi</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#metodo">Metodo</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#casi">Casi Studio</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#chi-siamo">Chi Siamo</a>
 <a class="bg-primary text-on-primary px-6 py-2 text-sm font-label tracking-widest uppercase hover:opacity-90 transition-all scale-95 active:scale-90" href="#form">Guarda il Workshop</a>
 </div>
 <!-- Hamburger button (mobile) -->
@@ -205,10 +212,10 @@
 <!-- Mobile menu -->
 <div id="mobile-menu" class="md:hidden hidden bg-stone-50/95 dark:bg-stone-900/95 backdrop-blur-md border-b border-stone-200/50">
 <div class="flex flex-col px-6 py-4 space-y-4">
-<a class="text-stone-600 dark:text-stone-400 font-medium py-2 hover:text-stone-900 transition-colors" href="#">Problemi</a>
-<a class="text-stone-600 dark:text-stone-400 font-medium py-2 hover:text-stone-900 transition-colors" href="#">Metodo</a>
-<a class="text-stone-600 dark:text-stone-400 font-medium py-2 hover:text-stone-900 transition-colors" href="#">Casi Studio</a>
-<a class="text-stone-600 dark:text-stone-400 font-medium py-2 hover:text-stone-900 transition-colors" href="#">Chi Siamo</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium py-2 hover:text-stone-900 transition-colors" href="#problemi">Problemi</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium py-2 hover:text-stone-900 transition-colors" href="#metodo">Metodo</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium py-2 hover:text-stone-900 transition-colors" href="#casi">Casi Studio</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium py-2 hover:text-stone-900 transition-colors" href="#chi-siamo">Chi Siamo</a>
 <a class="bg-primary text-on-primary px-6 py-3 text-sm font-label tracking-widest uppercase text-center hover:opacity-90 transition-all" href="#form">Guarda il Workshop</a>
 </div>
 </div>
@@ -220,7 +227,7 @@
 <div class="max-w-screen-xl mx-auto grid md:grid-cols-12 gap-12 items-center">
 <div class="md:col-span-10 lg:col-span-8 z-10">
 <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
-<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 font-label text-[10px] font-bold uppercase tracking-[0.2em]">Riservato CEO e PMI (€20-80M)</span>
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 font-label text-[10px] font-bold uppercase tracking-[0.2em]">Workshop gratuito per CEO di PMI (€20-80M)</span>
 </div>
 <h1 class="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-on-surface mb-8">
                 Il mercato non vede il <span class="italic font-light">valore</span> che la tua azienda ha già
@@ -432,7 +439,7 @@
 <div class="flex flex-wrap justify-center gap-4 sm:gap-8">
 <a class="font-sans uppercase tracking-widest text-[10px] font-bold text-stone-500 hover:text-stone-900 transition-colors" href="https://veritable-sb.it/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
 <a class="font-sans uppercase tracking-widest text-[10px] font-bold text-stone-500 hover:text-stone-900 transition-colors" href="https://veritable-sb.it/cookie-policy/" target="_blank" rel="noopener">Cookie Policy</a>
-<a class="font-sans uppercase tracking-widest text-[10px] font-bold text-stone-500 hover:text-stone-900 transition-colors" href="https://veritable-sb.it/contatti/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="font-sans uppercase tracking-widest text-[10px] font-bold text-stone-500 hover:text-stone-900 transition-colors" href="https://veritable-sb.it/contatti/" target="_blank" rel="noopener">Contatti</a>
 </div>
 <div class="text-center md:text-right">
 <p class="font-sans uppercase tracking-widest text-[10px] font-bold text-stone-400">© 2026 Véritable S.r.l. Società Benefit</p>
